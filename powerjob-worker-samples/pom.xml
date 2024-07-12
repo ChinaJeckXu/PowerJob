@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>powerjob</artifactId>
-        <groupId>tech.powerjob</groupId>
+        <groupId>org.jeckxu.magical</groupId>
         <version>4.3.9</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -43,7 +43,7 @@
         </dependency>
 
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-worker-spring-boot-starter</artifactId>
             <version>${powerjob.worker.starter.version}</version>
         </dependency>
@@ -54,7 +54,7 @@
             <version>${fastjson.version}</version>
         </dependency>
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-official-processors</artifactId>
             <version>${powerjob.official.processors.version}</version>
         </dependency>
