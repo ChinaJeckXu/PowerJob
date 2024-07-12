@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>powerjob-remote</artifactId>
-        <groupId>tech.powerjob</groupId>
+        <groupId>org.jeckxu.magical</groupId>
         <version>5.1.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,18 +13,18 @@
     <version>5.1.1</version>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <vertx.version>4.3.7</vertx.version>
+        <vertx.version>4.3.8</vertx.version>
         <powerjob-remote-framework.version>5.1.1</powerjob-remote-framework.version>
     </properties>
 
     <dependencies>
 
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-remote-framework</artifactId>
             <version>${powerjob-remote-framework.version}</version>
         </dependency>
