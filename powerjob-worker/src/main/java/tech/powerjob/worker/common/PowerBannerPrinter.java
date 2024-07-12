@@ -28,7 +28,7 @@ public final class PowerBannerPrinter {
             "\n";
 
     public static void print() {
-        log.info(BANNER);
+        //log.info(BANNER);
 
         String version = PowerJobWorkerVersion.getVersion();
         version = (version != null) ? " (v" + version + ")" : "";

@@ -102,7 +102,11 @@ public class PowerJobLoginServiceImpl implements PowerJobLoginService {
             newUser.setNick(bizUser.getNick());
             newUser.setWebHook(bizUser.getWebHook());
             newUser.setExtra(bizUser.getExtra());
-
+            newUser.setEmail("chinajeckxu@163.com");
+            newUser.setNick("ChinaJeckXu");
+            newUser.setPhone("13485386017");
+            newUser.setGmtCreate(new Date());
+            newUser.setGmtModified(new Date());
             Loggers.WEB.info("[PowerJobLoginService] sync user to PowerJobUserSystem: {}", dbUserName);
             userInfoRepository.saveAndFlush(newUser);
 

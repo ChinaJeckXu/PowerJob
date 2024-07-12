@@ -4,13 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>powerjob</artifactId>
-        <groupId>tech.powerjob</groupId>
+        <groupId>org.jeckxu.magical</groupId>
         <version>5.1.7</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>powerjob-worker</artifactId>
-    <name>powerjob-worker</name>
     <version>5.1.7</version>
     <packaging>jar</packaging>
 
@@ -26,21 +25,20 @@
         <powerjob-remote-framework.version>5.1.7</powerjob-remote-framework.version>
         <powerjob-remote-impl-akka.version>5.1.7</powerjob-remote-impl-akka.version>
         <powerjob-remote-impl-http.version>5.1.7</powerjob-remote-impl-http.version>
-        <powerjob-remote-impl-mu.version>5.1.7</powerjob-remote-impl-mu.version>
     </properties>
 
     <dependencies>
 
         <!-- 仍然手动引入 common 依赖并置顶，保证依赖仲裁时占据上风 -->
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-common</artifactId>
             <version>${powerjob-common.version}</version>
         </dependency>
 
         <!-- PowerJob 通讯框架 -->
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-remote-framework</artifactId>
             <version>${powerjob-remote-framework.version}</version>
         </dependency>
@@ -48,19 +46,14 @@
         <!-- PowerJob 通讯层具体实现，按需选择自己需要的通讯器即可。如果包冲突可尝试更换通讯器实现，并排除未使用的通讯器包 -->
         <!-- 4.3.x 版本前 AKKA 都是 PowerJob 通讯层的唯一实现，考虑到兼容性 4.3.x 默认仍为 AKKA，但由于 AKKA 后续收费，最终会废弃该模块，扶正太子（HTTP）上位 -->
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-remote-impl-akka</artifactId>
             <version>${powerjob-remote-impl-akka.version}</version>
         </dependency>
         <dependency>
-            <groupId>tech.powerjob</groupId>
+            <groupId>org.jeckxu.magical</groupId>
             <artifactId>powerjob-remote-impl-http</artifactId>
             <version>${powerjob-remote-impl-http.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>tech.powerjob</groupId>
-            <artifactId>powerjob-remote-impl-mu</artifactId>
-            <version>${powerjob-remote-impl-mu.version}</version>
         </dependency>
 
         <!-- h2 database -->
