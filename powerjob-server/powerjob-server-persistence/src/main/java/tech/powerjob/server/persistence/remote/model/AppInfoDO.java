@@ -3,7 +3,7 @@ package tech.powerjob.server.persistence.remote.model;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(name = "uidx01_app_info", columnNames = {"appName"})})
+@Table(name = "app_info", uniqueConstraints = {@UniqueConstraint(name = "uidx01_app_info", columnNames = {"appName"})})
 public class AppInfoDO {
 
     @Id

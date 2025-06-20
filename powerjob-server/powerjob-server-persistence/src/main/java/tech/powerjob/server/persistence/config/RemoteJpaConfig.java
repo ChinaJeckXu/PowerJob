@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
+import org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -56,7 +57,7 @@ public class RemoteJpaConfig {
         hibernateProperties.setDdlAuto("update");
 
         // 配置JPA自定义表名称策略
-        hibernateProperties.getNaming().setPhysicalStrategy(PowerJobPhysicalNamingStrategy.class.getName());
+        //hibernateProperties.getNaming().setPhysicalStrategy(PowerJobPhysicalNamingStrategy.class.getName());
         HibernateSettings hibernateSettings = new HibernateSettings();
         return hibernateProperties.determineHibernateProperties(jpaProperties.getProperties(), hibernateSettings);
     }

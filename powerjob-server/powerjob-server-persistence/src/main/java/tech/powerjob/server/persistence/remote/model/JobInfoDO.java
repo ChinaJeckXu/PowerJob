@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
@@ -19,7 +19,7 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(indexes = {
+@Table(name = "job_info", indexes = {
         @Index(name = "idx01_job_info", columnList = "appId,status,timeExpressionType,nextTriggerTime"),
 })
 public class JobInfoDO {

@@ -1,15 +1,18 @@
 package tech.powerjob.server.web.websocket;
 
+import jakarta.websocket.OnError;
+import jakarta.websocket.OnOpen;
+import jakarta.websocket.RemoteEndpoint;
+import jakarta.websocket.Session;
+import jakarta.websocket.server.PathParam;
+import jakarta.websocket.server.ServerEndpoint;
 import tech.powerjob.server.config.OmsEndpointConfigure;
 import tech.powerjob.server.core.container.ContainerService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
-import javax.websocket.*;
-import javax.websocket.server.PathParam;
-import javax.websocket.server.ServerEndpoint;
+import jakarta.annotation.Resource;
 import java.io.IOException;
 
 /**

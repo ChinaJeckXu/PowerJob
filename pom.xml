@@ -6,7 +6,7 @@
 
     <groupId>org.jeckxu.magical</groupId>
     <artifactId>powerjob</artifactId>
-    <version>5.1.1</version>
+    <version>5.1.1_SB3</version>
     <packaging>pom</packaging>
     <name>powerjob</name>
     <url>http://www.powerjob.tech</url>
@@ -48,17 +48,17 @@
     </modules>
 
     <properties>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.38</lombok.version>
     </properties>
 
     <dependencies>
@@ -87,6 +87,9 @@
                             <target>${java.version}</target>
                             <testSource>${java.version}</testSource>
                             <testTarget>${java.version}</testTarget>
+                            <encoding>UTF-8</encoding>
+                            <!-- 启用 -parameters 编译器标志 -->
+                            <compilerArgument>-parameters</compilerArgument>
                         </configuration>
                     </plugin>
                     <!-- Package source codes -->
@@ -196,6 +199,9 @@
                             <target>${java.version}</target>
                             <testSource>${java.version}</testSource>
                             <testTarget>${java.version}</testTarget>
+                            <encoding>UTF-8</encoding>
+                            <!-- 启用 -parameters 编译器标志 -->
+                            <compilerArgument>-parameters</compilerArgument>
                         </configuration>
                     </plugin>
                     <!-- Edit MANIFEST.MF -->
