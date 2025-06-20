@@ -6,15 +6,13 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 import org.springframework.core.ParameterNameDiscoverer;
+import org.springframework.core.StandardReflectionParameterNameDiscoverer;
+import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
-import org.springframework.expression.spel.SpelEvaluationException;
-import org.springframework.expression.spel.SpelMessage;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
-import org.springframework.expression.spel.support.StandardTypeLocator;
 
 import java.lang.reflect.Method;
 
@@ -28,7 +26,7 @@ import java.lang.reflect.Method;
 public class AOPUtils {
 
     private static final ExpressionParser PARSER = new SpelExpressionParser();
-    private static final ParameterNameDiscoverer DISCOVERER = new LocalVariableTableParameterNameDiscoverer();
+    private static final ParameterNameDiscoverer DISCOVERER = new StandardReflectionParameterNameDiscoverer();
 
     public static String parseRealClassName(JoinPoint joinPoint) {
         return joinPoint.getSignature().getDeclaringType().getSimpleName();
@@ -55,19 +53,7 @@ public class AOPUtils {
         String[] params = DISCOVERER.getParameterNames(method);
         assert params != null;
 
-        StandardEvaluationContext context = new StandardEvaluationContext();
-        StandardTypeLocator primary = new StandardTypeLocator();
-        StandardTypeLocator fallback = new StandardTypeLocator(AOPUtils.class.getClassLoader());
-        context.setTypeLocator(typeName -> {
-            try {
-                return primary.findType(typeName);
-            } catch (SpelEvaluationException e) {
-                if (e.getMessageCode() != SpelMessage.TYPE_NOT_FOUND) {
-                    throw e;
-                }
-                return fallback.findType(typeName);
-            }
-        });
+        EvaluationContext context = new StandardEvaluationContext();
         for (int len = 0; len < params.length; len++) {
             context.setVariable(params[len], arguments[len]);
         }

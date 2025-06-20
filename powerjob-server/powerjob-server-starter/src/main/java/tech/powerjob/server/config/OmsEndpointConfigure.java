@@ -1,11 +1,11 @@
 package tech.powerjob.server.config;
 
+import jakarta.websocket.server.ServerEndpointConfig;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import javax.websocket.server.ServerEndpointConfig;
 
 /**
  * WebSocket 配置

@@ -6,7 +6,7 @@
 
     <groupId>org.jeckxu.magical</groupId>
     <artifactId>powerjob</artifactId>
-    <version>5.1.7</version>
+    <version>5.1.7_SB3</version>
     <packaging>pom</packaging>
     <name>powerjob</name>
     <url>http://www.powerjob.tech</url>
@@ -48,10 +48,10 @@
     </modules>
 
     <properties>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
@@ -87,6 +87,9 @@
                             <target>${java.version}</target>
                             <testSource>${java.version}</testSource>
                             <testTarget>${java.version}</testTarget>
+                            <encoding>UTF-8</encoding>
+                            <!-- 启用 -parameters 编译器标志 -->
+                            <compilerArgument>-parameters</compilerArgument>
                         </configuration>
                     </plugin>
                     <!-- Package source codes -->
@@ -151,18 +154,30 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- maven central 发布插件 https://central.sonatype.org/publish/publish-portal-maven/    -->
                     <plugin>
-                        <groupId>org.sonatype.central</groupId>
-                        <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.8.0</version>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <publishingServerId>central</publishingServerId>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
         </profile>
 
         <!-- Local profile -->
@@ -184,6 +199,9 @@
                             <target>${java.version}</target>
                             <testSource>${java.version}</testSource>
                             <testTarget>${java.version}</testTarget>
+                            <encoding>UTF-8</encoding>
+                            <!-- 启用 -parameters 编译器标志 -->
+                            <compilerArgument>-parameters</compilerArgument>
                         </configuration>
                     </plugin>
                     <!-- Edit MANIFEST.MF -->

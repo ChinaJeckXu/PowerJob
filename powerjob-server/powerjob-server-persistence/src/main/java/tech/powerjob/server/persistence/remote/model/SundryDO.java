@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(uniqueConstraints = {@UniqueConstraint(name = "uidx01_sundry", columnNames = {"pkey", "skey"})})
+@Table(name = "sundry", uniqueConstraints = {@UniqueConstraint(name = "uidx01_sundry", columnNames = {"pkey", "skey"})})
 public class SundryDO {
 
     @Id

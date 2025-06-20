@@ -26,8 +26,8 @@ import tech.powerjob.server.core.instance.InstanceService;
 import tech.powerjob.server.web.controller.InstanceController;
 import tech.powerjob.server.web.service.LogDownloadTicketService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;

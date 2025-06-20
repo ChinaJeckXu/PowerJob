@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import tech.powerjob.common.enums.WorkflowNodeType;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
@@ -21,7 +21,7 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(indexes = {
+@Table(name = "workflow_node_info", indexes = {
         @Index(name = "idx01_workflow_node_info", columnList = "workflowId,gmtCreate")
 })
 public class WorkflowNodeInfoDO {

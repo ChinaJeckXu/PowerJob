@@ -1,6 +1,7 @@
 package tech.powerjob.server.persistence.remote.repository;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -10,7 +11,6 @@ import org.springframework.data.repository.query.Param;
 import tech.powerjob.server.persistence.remote.model.InstanceInfoDO;
 import tech.powerjob.server.persistence.remote.model.brief.BriefInstanceInfo;
 
-import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 

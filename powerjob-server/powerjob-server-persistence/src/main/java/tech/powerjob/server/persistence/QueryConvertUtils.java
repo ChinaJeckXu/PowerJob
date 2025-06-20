@@ -2,6 +2,7 @@ package tech.powerjob.server.persistence;
 
 import com.alibaba.fastjson.JSONArray;
 import com.google.common.collect.Lists;
+import jakarta.persistence.criteria.Predicate;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.PageRequest;
@@ -12,7 +13,6 @@ import tech.powerjob.common.PowerQuery;
 import tech.powerjob.common.exception.PowerJobException;
 import tech.powerjob.common.request.query.PowerPageQuery;
 
-import javax.persistence.criteria.Predicate;
 import java.lang.reflect.Field;
 import java.util.List;
 

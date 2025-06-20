@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,6 +17,7 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @Table(
+        name = "server_info",
         uniqueConstraints = {@UniqueConstraint(name = "uidx01_server_info", columnNames = "ip")},
         indexes = {@Index(name = "idx01_server_info", columnList = "gmtModified")}
 )

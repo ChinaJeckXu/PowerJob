@@ -1,9 +1,9 @@
 package tech.powerjob.server.persistence.remote.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(name = "uidx01_namespace", columnNames = {"code"})})
+@Table(name = "namespace", uniqueConstraints = {@UniqueConstraint(name = "uidx01_namespace", columnNames = {"code"})})
 public class NamespaceDO {
 
     @Id

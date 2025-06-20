@@ -3,7 +3,7 @@ package tech.powerjob.server.persistence.remote.model;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(indexes = {
+@Table(name = "user_role", indexes = {
         @Index(name = "uidx01_user_id", columnList = "userId")
 })
 public class UserRoleDO {
