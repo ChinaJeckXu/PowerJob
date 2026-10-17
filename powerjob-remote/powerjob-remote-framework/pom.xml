@@ -17,7 +17,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <powerjob-common.version>5.1.1</powerjob-common.version>
+        <powerjob-common.version>5.1.7</powerjob-common.version>
         <reflections.version>0.10.2</reflections.version>
 
 
