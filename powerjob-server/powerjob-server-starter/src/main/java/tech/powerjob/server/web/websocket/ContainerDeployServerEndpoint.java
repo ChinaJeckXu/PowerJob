@@ -1,6 +1,7 @@
 package tech.powerjob.server.web.websocket;
 
 import jakarta.websocket.OnError;
+import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
 import jakarta.websocket.RemoteEndpoint;
 import jakarta.websocket.Session;

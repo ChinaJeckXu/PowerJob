@@ -14,13 +14,14 @@
         <module>powerjob-remote-benchmark</module>
         <module>powerjob-remote-impl-http</module>
         <module>powerjob-remote-impl-akka</module>
+        <module>powerjob-remote-impl-mu</module>
     </modules>
 
     <artifactId>powerjob-remote</artifactId>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <junit.version>5.9.0</junit.version>
