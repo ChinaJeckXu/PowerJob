@@ -5,11 +5,11 @@
     <parent>
         <artifactId>powerjob-remote</artifactId>
         <groupId>org.jeckxu.magical</groupId>
-        <version>5.1.1</version>
+        <version>5.1.7</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <version>5.1.1</version>
+    <version>5.1.7</version>
     <artifactId>powerjob-remote-framework</artifactId>
 
     <properties>
